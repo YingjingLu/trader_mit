@@ -1,3 +1,13 @@
+Env:
+Developed in python 3.5
+Downward compatible with python 2.7
+
+Further development should mind python2 compatibility:
+    - int float division
+    - print statement
+---------------------------------------------------------------
+
+
 File Specs:
 
 main.py
