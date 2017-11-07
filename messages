@@ -1,0 +1,54 @@
+Market update message
+
+
+msg:  {'message_type': 'MARKET UPDATE', 
+       'market_state': {
+                        'ticker': 'T96P', 
+                        'last_price': 5.98, 
+                        'asks': 
+                              {'6.81': 1500, '7.07': 1000, '7.09': 1500, '6.77': 630, '7.12': 1750, '6.78': 1250, '7.10': 1500, '6.79': 1500, '7.06': 451, '6.82': 1750, '7.13': 1750, '7.11': 1500, '6.80': 1500, '6.83': 1750, '7.08': 1250}, 
+                        'time': '2017-11-06T22:58:42.8483322-05:00', 
+                        'bids': 
+                               {'5.96': 1500, '5.26': 750, '5.23': 1500, '5.22': 1500, '5.20': 1750, '5.94': 1500, '5.97': 1250, '5.25': 1000, '5.19': 1750, '5.92': 1750, '5.95': 1500, '5.21': 1500, '5.98': 713, '5.24': 1250, '5.93': 1750}
+                        }, 
+        'elapsed_time': 2
+        }
+
+
+
+On Trade
+
+
+msg:  {'trades': 
+               [
+                   {
+                     'buy_order_id': 225137, 
+                     'trade_id': 'T100C:997', 
+                     'price': 7.87, 
+                     'quantity': 18, 
+                     'time': '2017-11-06T23:01:43.2284867-05:00', 
+                     'sell_order_id': 253697, 
+                     'ticker': 'T100C', 
+                     'buy': False
+                    }, 
+                   {'buy_order_id': 225141, 'trade_id': 'T100C:998', 'price': 7.86, 'quantity': 82, 'time': '2017-11-06T23:01:43.2
+284867-05:00', 'sell_order_id': 253697, 'ticker': 'T100C', 'buy': False}], 'message_type': 'TRADE'}
+
+
+On Trader Update
+
+msg:  {'trader_state': {'open_orders': {}, 'total_fines': 0, 'total_fees': -1, 'total_rebates': 0, 'subscriptions': {}, 'cash': {'USD': 999945.18}, 'position
+s': {'T117C': 0, 'T83P': 0, 'T111C': 0, 'T113C': 0, 'T105C': 0, 'T81P': 0, 'T96C': 0, 'T101C': 0, 'T92C': 0, 'T100P': 0, 'T97P': 0, 'T109C': 0, 'T112C': 0, '
+T95C': 0, 'T113P': 0, 'T120P': 0, 'T93P': 0, 'T83C': 0, 'T91P': 0, 'T110C': 0, 'T80P': 0, 'T109P': 0, 'T105P': 0, 'T118C': 0, 'T94P': 0, 'T101P': 0, 'T108C':
+ 0, 'TMXFUT': 0, 'T116P': 0, 'T89C': 0, 'T80C': 0, 'T86C': 0, 'T106P': 0, 'T115C': 0, 'T93C': 0, 'T99C': 0, 'T91C': 0, 'T107P': 0, 'T88C': 0, 'T96P': 0, 'T87
+C': 0, 'T97C': 0, 'T114C': 0, 'T107C': 0, 'T82C': 0, 'T119C': 0, 'T90C': 0, 'T104P': 0, 'T116C': 0, 'T94C': 0, 'T88P': 0, 'T99P': 0, 'T114P': 0, 'T82P': 0, '
+T117P': 0, 'T108P': 0, 'T85P': 0, 'T119P': 0, 'T86P': 0, 'T112P': 0, 'T118P': 0, 'T92P': 0, 'T115P': 0, 'T89P': 0, 'T98P': 0, 'T95P': 0, 'T102C': 0, 'T120C':
+ 0, 'T100C': 0, 'T84P': 0, 'T85C': 0, 'T103C': 0, 'T110P': 0, 'T90P': 0, 'T84C': 0, 'T104C': 0, 'T102P': 0, 'T81C': 0, 'T106C': 0, 'T87P': 0, 'T98C': 0, 'T11
+1P': 0, 'T103P': 0}, 'time': '2017-11-06T23:01:45.2466836-05:00', 'pnl': {'USD': -55.81999999994878}, 'trader_id': 'trader0', 'default_pnl': -55.819999999948
+78}, 'message_type': 'TRADER UPDATE'}
+
+On Modifying order
+
+msg:  {'token': 'r0j', 'orders': [{'buy': True, 'quantity': 0, 'price': 1000000, 'order_id': 866821, 'ticker': 'T100C'}], 'message_type': 'ACK MODIFY ORDERS'}
+
+msg:  {'token': 'nwrk', 'orders': [{'buy': False, 'quantity': 0, 'price': 0, 'order_id': 867071, 'ticker': 'T100P'}], 'message_type': 'ACK MODIFY ORDERS'}

@@ -1,8 +1,5 @@
-# this program downwards compatible with python 2.7
-# recommend run in python 3.5
-
-from src.gb import *
-from src.options_bot import *
+from gb import *
+from options_bot import *
 import sys
 
 
