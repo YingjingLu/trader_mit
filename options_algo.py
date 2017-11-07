@@ -201,28 +201,28 @@ def clear_msg_pos(res_dict):
 def record_order(ticker, pos, price, trade_order):
     if CUR_POS_DICT.get(ticker) != None:
         pos_dict = CUR_POS_DICT[ticker]
-        if abs(pos_dict['pos'] + pos) > HOLDING_LIMIT:
-            print("Clear previous Position")
-            # if in short then buy back
-            if pos_dict['pos'] < 0:
-                trade_order.addBuy(pos_dict[ticker], -1*pos_dict['pos'])
-                del CUR_POS_DICT[ticker]
+        if abs(pos_dict['pos'] + pos) < HOLDING_LIMIT:
+            # print("Clear previous Position")
+            # # if in short then buy back
+            # if pos_dict['pos'] < 0:
+            #     trade_order.addBuy(pos_dict[ticker], -1*pos_dict['pos'])
+            #     del CUR_POS_DICT[ticker]
+            # else:
+            #     rade_order.addSell(pos_dict[ticker], pos_dict['pos'])
+            #     del CUR_POS_DICT[ticker]
+
+    
+
+
+            if CUR_POS_DICT.get(ticker) != None:
+                print("Order: ", ticker, "Pos", pos, 'Price: ', price)
+                pos_dict = CUR_POS_DICT[ticker]
+                if pos_dict['pos']+pos == 0:
+                    del CUR_POS_DICT[ticker]
+                    return
+                price = (price*pos+pos_dict['price']*pos_dict['pos'])/(pos_dict['pos'] + pos)
+                pos_dict['pos'] += pos
+                pos_dict['price'] = price
+                
             else:
-                rade_order.addSell(pos_dict[ticker], pos_dict['pos'])
-                del CUR_POS_DICT[ticker]
-
-    print("Order: ", ticker, "Pos", pos, 'Price: ', price)
-
-
-    if CUR_POS_DICT.get(ticker) != None:
-
-        pos_dict = CUR_POS_DICT[ticker]
-        if pos_dict['pos']+pos == 0:
-            del CUR_POS_DICT[ticker]
-            return
-        price = (price*pos+pos_dict['price']*pos_dict['pos'])/(pos_dict['pos'] + pos)
-        pos_dict['pos'] += pos
-        pos_dict['price'] = price
-        
-    else:
-        CUR_POS_DICT[ticker] = {'pos':pos, 'price':price, 'highest': price}
+                CUR_POS_DICT[ticker] = {'pos':pos, 'price':price, 'highest': price}
